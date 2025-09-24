@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>votacion Jonathan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/icono_voto.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>sistema de votacion de aprendices</h1>
+  </header>
+
+  <main>
+    
+    <section id="admin">
+      <h2>Panel Administrador</h2>
+      <form id="formAdmin">
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <input type="password" id="clave" placeholder="Clave" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <div id="controles" style="display:none;">
+        <button id="btnIniciar">Iniciar Elecciones</button>
+        <button id="btnCerrar">Cerrar Elecciones</button>
+      </div>
+    </section>
+
+    
+    <section id="estado" class="note">
+      Estado actual: <span id="estadoTexto">Esperando...</span>
+    </section>
+
+    
+    <section id="candidatos" class="oculto"></section>
+
+    
+    <section id="resultados" class="oculto">
+      <h2>Resultados de votaciones</h2>
+      
+      <div id="listaResultados" class="tabla-resultados"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>  Autor: Jonathan montenegro sueña,vive y diviertete - Adso 3064975</p>
+    
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
