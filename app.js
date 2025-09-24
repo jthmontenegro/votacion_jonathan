@@ -19,15 +19,15 @@ async function cargarCandidatos() {
 
     candidatos.forEach(c => {
 if (c.nombre.toLowerCase().includes("juan")) {
-  c.foto = "../images/icono_persona.png";
+  c.foto = "images/icono_persona.png";
 } else if (c.nombre.toLowerCase().includes("monik")) {
-  c.foto = "../images/icono_persona.png";
+  c.foto = "images/icono_persona.png";
 } else if (c.nombre.toLowerCase().includes("carlos")) {
-  c.foto = "../images/icono_persona.png";
+  c.foto = "images/icono_persona.png";
 }
 
 if ((c.nombre || "").toLowerCase().includes("blanco")) {
-  c.foto = "../images/icono_blanco.png";
+  c.foto = "images/icono_blanco.png";
   c.programa = "—";
 }
 
@@ -39,14 +39,14 @@ if ((c.nombre || "").toLowerCase().includes("blanco")) {
 
     let candidatoBlanco = candidatos.find(c => (c.nombre || "").toLowerCase().includes("blanco"));
     if (candidatoBlanco) {
-      candidatoBlanco.foto = "../images/icono_blanco.png";
+      candidatoBlanco.foto = "images/icono_blanco.png";
       candidatoBlanco.programa = "—";
     } else {
       candidatos.push({
         id: "blanco",
         nombre: "Candidato en Blanco",
         programa: "—",
-        foto: "./images/icono_blanco.png"
+        foto: "images/icono_blanco.png"
       });
     }
 
