@@ -18,13 +18,18 @@ async function cargarCandidatos() {
     ];
 
     candidatos.forEach(c => {
-      if (c.nombre.toLowerCase().includes("juan")) {
-        c.foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEcO-nMpNPGK4xD2bAnHfD2dtNVp_haNWQ&s";
-      } else if (c.nombre.toLowerCase().includes("monik")) {
-        c.foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEcO-nMpNPGK4xD2bAnHfD2dtNVp_haNWQ&s";
-      } else if (c.nombre.toLowerCase().includes("carlos")) {
-        c.foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEcO-nMpNPGK4xD2bAnHfD2dtNVp_haNWQ&s";
-      }
+if (c.nombre.toLowerCase().includes("juan")) {
+  c.foto = "../images/icono_persona.png";
+} else if (c.nombre.toLowerCase().includes("monik")) {
+  c.foto = "../images/icono_persona.png";
+} else if (c.nombre.toLowerCase().includes("carlos")) {
+  c.foto = "../images/icono_persona.png";
+}
+
+if ((c.nombre || "").toLowerCase().includes("blanco")) {
+  c.foto = "../images/icono_blanco.png";
+  c.programa = "—";
+}
 
       if (!(c.nombre.toLowerCase().includes("blanco"))) {
         const randomIndex = Math.floor(Math.random() * programasSena.length);
@@ -34,14 +39,14 @@ async function cargarCandidatos() {
 
     let candidatoBlanco = candidatos.find(c => (c.nombre || "").toLowerCase().includes("blanco"));
     if (candidatoBlanco) {
-      candidatoBlanco.foto = "https://pbs.twimg.com/media/DfAhhcQXcAEpzaE.jpg";
+      candidatoBlanco.foto = "../images/icono_blanco.png";
       candidatoBlanco.programa = "—";
     } else {
       candidatos.push({
         id: "blanco",
         nombre: "Candidato en Blanco",
         programa: "—",
-        foto: "images/voto_blanco.png"
+        foto: "./images/icono_blanco.png"
       });
     }
 
@@ -146,7 +151,7 @@ function mostrarResultados() {
   contenedor.innerHTML = `
     <table class="tabla-resultados">
       <thead>
-        <tr>A
+        <tr>
           <th>Candidato</th>
           <th>Votos</th>
         </tr>
