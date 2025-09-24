@@ -146,7 +146,7 @@ function mostrarResultados() {
   contenedor.innerHTML = `
     <table class="tabla-resultados">
       <thead>
-        <tr>
+        <tr>A
           <th>Candidato</th>
           <th>Votos</th>
         </tr>
